@@ -1,0 +1,31 @@
+package com.example.android.practiceset2;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    int weekday = 5;
+    int weekend = 9;
+    int optimalHours = 7 * 8;
+
+    int actualHours = weekday;
+    actualHours = actualHours + weekend * 2;
+    int solution = optimalHours - actualHours;
+    display(solution);
+
+
+  }
+
+  public void display(int data){
+    String dataTest = Integer.toString(data);
+    TextView tv = (TextView)findViewById(R.id.tv1);
+    tv.setText(dataTest);
+  }
+}
